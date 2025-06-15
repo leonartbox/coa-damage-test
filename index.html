@@ -1,10 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="jp">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>coa damage test</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <style>
+        .label-area {
+            background-color: #b0e0e6;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        .label-area-other {
+            background-color: #fffacd;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        .label-area-result {
+            background-color: #dda0dd;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        .label-area-target {
+            background-color: #90ee90;
+            padding: 8px;
+            border-radius: 4px;
+        }
+    </style>
+
 </head>
 <body>
+    <header></header>
+    <main class="container mt-4" style="max-width: 500px">
+
+        <div class="mb-3 row align-items-center">
+            <label class="col-sm-7 label-area" for="atk">［物理 / 魔法］攻撃</label>
+            <div class="col-sm-5">
+                <input type="number" value="0" step="0" id="atk" class="form-control" />
+            </div>
+        </div>
+
+        <div class="mb-3 row align-items-center">
+            <label class="col-sm-7 label-area" for="defShred">防御破壊［物理 / 魔法］攻撃</label>
+            <div class="col-sm-5">
+                <input type="text" value="0" step="0" id="defShred" class="form-control" />
+            </div>
+        </div>
+
+        <div class="mb-3 row align-items-center">
+            <label class="col-sm-7 label-area-other" for="skillRate">スキル倍率</label>
+            <div class="col-sm-5">
+                <div class="input-group">
+                    <input type="number" value="0.0" step="0.1" id="skillRate" class="form-control" />
+                    <span class="input-group-text">%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 row align-items-center">
+            <label class="col-sm-7 label-area col-form-label">クリティカル率</label>
+            <div class="col-sm-5">
+                <div class="form-check form-check-inline">
+                    <input type="radio" value="false" name="crit" id="critDisabled" class="form-check-input" checked />
+                    <label class="form-check-label" for="critDisabled">0%</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" value="true" name="crit" id="critEnabled" class="form-check-input" />
+                    <label class="form-check-label" for="critEnabled">100%</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 row align-items-center">
+            <label class="col-sm-7 label-area" for="critDmg">クリティカルダメージ</label>
+            <div class="col-sm-5">
+                <div class="input-group">
+                    <input type="number" value="0.0" step="0.1" id="critDmg" class="form-control" />
+                    <span class="input-group-text">%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 row align-items-center">
+            <label class="col-sm-7 label-area" for="enh">［氷 / 炎 / 雷 / 闇］属性強化</label>
+            <div class="col-sm-5">
+                <input type="text" value="0.0" step="0.1" id="enh" class="form-control" />
+            </div>
+        </div>
+
+        <div class="mb-3 row align-items-center">
+            <label class="col-sm-7 label-area" for="dmgBonus">ダメージ上昇</label>
+            <div class="col-sm-5">
+                <div class="input-group">
+                    <input type="number" value="0.0" step="0.1" id="dmgBonus" class="form-control" />
+                    <span class="input-group-text">%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 row align-items-center">
+            <label class="col-sm-7 label-area" for="skillDmg">スキルダメージ</label>
+            <div class="col-sm-5">
+                <div class="input-group">
+                    <input type="number" value="0.0" step="0.1" id="skillDmg" class="form-control" />
+                    <span class="input-group-text">%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 row align-items-center">
+            <label class="col-sm-7 label-area" for="dmgToBosses">対ボスダメージ</label>
+            <div class="col-sm-5">
+                <div class="input-group">
+                    <input type="number" value="0.0" step="0.1" id="dmgToBosses" class="form-control" />
+                    <span class="input-group-text">%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 row align-items-center">
+            <label class="col-sm-7 label-area-other" for="otherDmg">上記以外があれば</label>
+            <div class="col-sm-5">
+                <div class="input-group">
+                    <input type="number" value="0.0" step="0.1" id="otherDmg" class="form-control" />
+                    <span class="input-group-text">%</span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="mb-3 row align-items-center">
+            <label class="col-sm-7 label-area-target" for="dmgTaken">【敵】［物理 / 魔法］被ダメージ</label>
+            <div class="col-sm-5">
+                <div class="input-group">
+                    <input type="number" value="0.0" step="0.1" id="dmgTaken" class="form-control" />
+                    <span class="input-group-text">%</span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="row">
+            <div class="col-7 label-area-result">推定ダメージ</div>
+            <div class="col-5 d-flex align-items-center">
+                <div id="result">
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        function calc() {
+            const atk = parseFloat(document.getElementById('atk').value) || 0
+            const defShred = parseFloat(document.getElementById('defShred').value) || 0
+            const skillRate = parseFloat(document.getElementById('skillRate').value) || 0
+            const crit = document.querySelector('input[name="crit"]:checked').value === "true"
+            const critDmg = parseFloat(document.getElementById('critDmg').value) || 0
+            const enh = parseFloat(document.getElementById('enh').value) || 0
+            const dmgBonus = parseFloat(document.getElementById('dmgBonus').value) || 0
+            const skillDmg = parseFloat(document.getElementById('skillDmg').value) || 0
+            const dmgToBosses = parseFloat(document.getElementById('dmgToBosses').value) || 0
+            const otherDmg = parseFloat(document.getElementById('otherDmg').value) || 0
+
+            const dmgTaken = parseFloat(document.getElementById('dmgTaken').value) || 0
+
+            const baseDmg = atk * ( 1 - dmgTaken / 100 ) + defShred
+            let dmg = baseDmg * ( skillRate / 100 )
+            if (crit) dmg = dmg * ( 1 + critDmg / 100 )
+            dmg = dmg * ( 1 + enh * 5 / 11 / 100)
+            dmg = dmg * ( 1 + dmgBonus / 100)
+            dmg = dmg * ( 1 + skillDmg / 100)
+            dmg = dmg * ( 1 + dmgToBosses / 100)
+            dmg = dmg * ( 1 + otherDmg / 100)
+            dmg = dmg * ( 1 + 0.08 )
+
+            console.log(dmg)
+            document.getElementById('result').innerHTML = Math.round(dmg).toLocaleString()
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('input').forEach(el => {
+                el.addEventListener('input', calc)
+                el.addEventListener('change', calc)
+            })
+        })
+
+        calc()
+    </script>
 
 </body>
 </html>
