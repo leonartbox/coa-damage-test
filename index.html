@@ -32,25 +32,25 @@
 </head>
 <body>
     <header></header>
-    <main class="container mt-4" style="max-width: 500px">
+    <main class="container p-3" style="max-width: 400px">
 
         <div class="mb-3 row align-items-center">
-            <label class="col-sm-7 label-area" for="atk">［物理 / 魔法］攻撃</label>
-            <div class="col-sm-5">
+            <label class="col-7 label-area" for="atk">［物理 / 魔法］攻撃</label>
+            <div class="col-5">
                 <input type="number" value="0" step="0" id="atk" class="form-control" />
             </div>
         </div>
 
         <div class="mb-3 row align-items-center">
-            <label class="col-sm-7 label-area" for="defShred">防御破壊［物理 / 魔法］攻撃</label>
-            <div class="col-sm-5">
+            <label class="col-7 label-area" for="defShred">防御破壊［物理 / 魔法］攻撃</label>
+            <div class="col-5">
                 <input type="text" value="0" step="0" id="defShred" class="form-control" />
             </div>
         </div>
 
         <div class="mb-3 row align-items-center">
-            <label class="col-sm-7 label-area-other" for="skillRate">スキル倍率</label>
-            <div class="col-sm-5">
+            <label class="col-7 label-area-other" for="skillRate">スキル倍率</label>
+            <div class="col-5">
                 <div class="input-group">
                     <input type="number" value="0.0" step="0.1" id="skillRate" class="form-control" />
                     <span class="input-group-text">%</span>
@@ -59,8 +59,8 @@
         </div>
 
         <div class="mb-3 row align-items-center">
-            <label class="col-sm-7 label-area col-form-label">クリティカル率</label>
-            <div class="col-sm-5">
+            <label class="col-7 label-area col-form-label">クリティカル率</label>
+            <div class="col-5">
                 <div class="form-check form-check-inline">
                     <input type="radio" value="false" name="crit" id="critDisabled" class="form-check-input" checked />
                     <label class="form-check-label" for="critDisabled">0%</label>
@@ -73,8 +73,8 @@
         </div>
 
         <div class="mb-3 row align-items-center">
-            <label class="col-sm-7 label-area" for="critDmg">クリティカルダメージ</label>
-            <div class="col-sm-5">
+            <label class="col-7 label-area" for="critDmg">クリティカルダメージ</label>
+            <div class="col-5">
                 <div class="input-group">
                     <input type="number" value="0.0" step="0.1" id="critDmg" class="form-control" />
                     <span class="input-group-text">%</span>
@@ -83,15 +83,15 @@
         </div>
 
         <div class="mb-3 row align-items-center">
-            <label class="col-sm-7 label-area" for="enh">［氷 / 炎 / 雷 / 闇］属性強化</label>
-            <div class="col-sm-5">
+            <label class="col-7 label-area" for="enh">［氷 / 炎 / 雷 / 闇］属性強化</label>
+            <div class="col-5">
                 <input type="text" value="0.0" step="0.1" id="enh" class="form-control" />
             </div>
         </div>
 
         <div class="mb-3 row align-items-center">
-            <label class="col-sm-7 label-area" for="dmgBonus">ダメージ上昇</label>
-            <div class="col-sm-5">
+            <label class="col-7 label-area" for="dmgBonus">ダメージ上昇</label>
+            <div class="col-5">
                 <div class="input-group">
                     <input type="number" value="0.0" step="0.1" id="dmgBonus" class="form-control" />
                     <span class="input-group-text">%</span>
@@ -100,8 +100,8 @@
         </div>
 
         <div class="mb-3 row align-items-center">
-            <label class="col-sm-7 label-area" for="skillDmg">スキルダメージ</label>
-            <div class="col-sm-5">
+            <label class="col-7 label-area" for="skillDmg">スキルダメージ</label>
+            <div class="col-5">
                 <div class="input-group">
                     <input type="number" value="0.0" step="0.1" id="skillDmg" class="form-control" />
                     <span class="input-group-text">%</span>
@@ -110,8 +110,8 @@
         </div>
 
         <div class="mb-3 row align-items-center">
-            <label class="col-sm-7 label-area" for="dmgToBosses">対ボスダメージ</label>
-            <div class="col-sm-5">
+            <label class="col-7 label-area" for="dmgToBosses">対ボスダメージ</label>
+            <div class="col-5">
                 <div class="input-group">
                     <input type="number" value="0.0" step="0.1" id="dmgToBosses" class="form-control" />
                     <span class="input-group-text">%</span>
@@ -120,8 +120,8 @@
         </div>
 
         <div class="mb-3 row align-items-center">
-            <label class="col-sm-7 label-area-other" for="otherDmg">上記以外があれば</label>
-            <div class="col-sm-5">
+            <label class="col-7 label-area-other" for="otherDmg">上記以外があれば</label>
+            <div class="col-5">
                 <div class="input-group">
                     <input type="number" value="0.0" step="0.1" id="otherDmg" class="form-control" />
                     <span class="input-group-text">%</span>
@@ -132,8 +132,8 @@
         <hr class="my-4">
 
         <div class="mb-3 row align-items-center">
-            <label class="col-sm-7 label-area-target" for="dmgTaken">【敵】［物理 / 魔法］被ダメージ</label>
-            <div class="col-sm-5">
+            <label class="col-7 label-area-target" for="dmgTaken">【敵】［物理 / 魔法］被ダメージ</label>
+            <div class="col-5">
                 <div class="input-group">
                     <input type="number" value="0.0" step="0.1" id="dmgTaken" class="form-control" />
                     <span class="input-group-text">%</span>
